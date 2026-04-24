@@ -76,7 +76,7 @@ public class LoanTemplate {
 
 	  /** Return loan date */
 	  public java.util.Date getLoanDate() {
-	    return loanDate;
+	    return loanDate; 
 	  }
 	  
 	}

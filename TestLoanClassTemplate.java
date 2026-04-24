@@ -1,7 +1,7 @@
 package groupproject2025;
 // LiveExample 10.1
 import java.util.Scanner;
-
+ 
 public class TestLoanClassTemplate {
   /** Main method */
   public static void main(String[] args) {
@@ -56,17 +56,26 @@ public class TestLoanClassTemplate {
 
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // to do A1 same as A2
-		  
+		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
+		  intrest = myLoanAmount * myMonthlyInterestRate;
+		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
+		  principal = myMonthlyPayment - intrest;
+		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
+		  myLoanAmount -= principal - extraPay;
+		  // add the interest paid this month to totalInterest
+		  intrest += totalInterest;
+		  // increment the month count
+		  month++;
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do B1 same as B2
 	  }
 	  double interestSaved = l.getTotalInterest() - totalInterest;
-	  /*
+	  
 	  System.out.println("total interest " + totalInterest);
 	  System.out.println("interest saved " + interestSaved);
 	  System.out.println("total month " + month);
-	  */
+	  
 	  System.out.printf("Total interest $%.2f%nTotal interest saved $%.2f%nTotal months %d %n",
 			  totalInterest, interestSaved, month);	  
   }
@@ -85,10 +94,15 @@ public class TestLoanClassTemplate {
 	  while (myLoanAmount >= (myMonthlyPayment + extraPay)) {
 		  // to do A2 same as A1
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
+		  intrest = myLoanAmount * myMonthlyInterestRate;
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
+		  principal = myMonthlyPayment - intrest;
 		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
+		  myLoanAmount -= principal - extraPay;
 		  // add the interest paid this month to totalInterest
+		  intrest += totalInterest;
 		  // increment the month count
+		  month++;
 
 	  }
 	  while (myLoanAmount >= myMonthlyPayment) {
