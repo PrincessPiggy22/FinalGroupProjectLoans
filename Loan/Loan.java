@@ -71,7 +71,7 @@ public class Loan {
 	  public double getTotalInterest() {
 	    // to do
 		// totalInterest is the difference of total payment minus loan amount
-		totalInterest = totalPayment - loanAmount;
+		double totalInterest = getTotalPayment() - loanAmount;
 	    return totalInterest;    
 	  }
 
