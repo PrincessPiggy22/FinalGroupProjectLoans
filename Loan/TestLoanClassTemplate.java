@@ -1,6 +1,6 @@
 /**
  * Madeline Puryear Huzaifah Sajjad
- * Course: Java I
+ * Course: CSC 251
  * Date: 04/27/2026
  *
  * A Loan calculator with monthley intrest and extra payments
