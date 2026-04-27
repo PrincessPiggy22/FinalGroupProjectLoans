@@ -5,7 +5,7 @@
  *
  * A Loan calculator with monthley intrest and extra payments
  */
-package groupproject2025;
+
 // LiveExample 10.1
 import java.util.Scanner;
  
