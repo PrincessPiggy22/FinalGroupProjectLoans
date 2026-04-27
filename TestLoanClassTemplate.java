@@ -64,18 +64,28 @@ public class TestLoanClassTemplate {
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // to do A1 same as A2
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
-		  intrest = myLoanAmount * myMonthlyInterestRate;
+		  interest = myLoanAmount * myMonthlyInterestRate;
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
-		  principal = myMonthlyPayment - intrest;
+		  principal = myMonthlyPayment - interest;
 		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
 		  myLoanAmount -= principal - extraPay;
 		  // add the interest paid this month to totalInterest
-		  intrest += totalInterest;
+		  totalInterest += interest;
 		  // increment the month count
 		  month++;
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do B1 same as B2
+		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
+		  interest = myLoanAmount * myMonthlyInterestRate;
+		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
+		  principal = myMonthlyPayment - interest;
+		  // caculate the new myLoanAmount after minus this month's principal
+		  myLoanAmount -= principal;
+		  // add the interest paid this month to totalInterest
+		  totalInterest += interest;
+		  // increment the month count
+		  month++;
 	  }
 	  double interestSaved = l.getTotalInterest() - totalInterest;
 	  
@@ -101,13 +111,13 @@ public class TestLoanClassTemplate {
 	  while (myLoanAmount >= (myMonthlyPayment + extraPay)) {
 		  // to do A2 same as A1
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
-		  intrest = myLoanAmount * myMonthlyInterestRate;
+		  interest = myLoanAmount * myMonthlyInterestRate;
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
-		  principal = myMonthlyPayment - intrest;
+		  principal = myMonthlyPayment - interest;
 		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
 		  myLoanAmount -= principal - extraPay;
 		  // add the interest paid this month to totalInterest
-		  intrest += totalInterest;
+		  totalInterest += interest;
 		  // increment the month count
 		  month++;
 
@@ -115,10 +125,15 @@ public class TestLoanClassTemplate {
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // to do B2 same as B1
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
+		  interest = myLoanAmount * myMonthlyInterestRate;
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
+		  principal = myMonthlyPayment - interest;
 		  // caculate the new myLoanAmount after minus this month's principal
+		  myLoanAmount -= principal;
 		  // add the interest paid this month to totalInterest
+		  totalInterest += interest;
 		  // increment the month count
+		  month++;
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do
